@@ -25,3 +25,17 @@
 .navBarClass .li {
     margin-right: 20px; 
 }
+
+a{
+    text-decoration: none;
+    color: rgb(147, 88, 165);
+}
+
+a:hover{
+    background-color: rgb(147, 88, 165);
+    color: white;
+    font-weight: 400;
+    border-radius: 7px;
+    padding: 10px;
+}
+
