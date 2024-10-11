@@ -16,33 +16,32 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const base = getFirestore(app)
+export const db = getFirestore(app)
 
-
-const productosDoggi = [
+/*const productosDoggi = [
     {nombre: "Cadena de paseo", precio: "$14000", stock:10, categoria: "paseo", detalles:"Cadena de paseo con manopla soft de tela en diferentes colores", img: "../src/assets/imagenes/cadenaPaseo.webp"},
-    { nombre: "Cama para Auto", precio: "$25000", stock:25, categoria: "auto",  detalles:"Cama Para Perros Huella Living Car Doble Talle 5 Para Autos", img:"../src/assets/imagenes/camaAutp.webp"},
-    {nombre: "Comedero", precio: "$10000", stock: 50, categoria: "casa", img:"../src/assets/imagenes/comedero.webp"},
-    {nombre: "Comedero come lento", precio: "$25000", stock: 5, categoria: "casa", img:"../src/assets/imagenes/comederoComelentoo.webp"},
-    {nombre: "Comedero automático", precio: "$15000", stock: 40, categoria: "casa", img:"../src/assets/imagenes/comederoAutomaticp.webp"},
-    {nombre: "Hueso de tela", precio: "$5000", stock:100,  categoria: "juguetes", img:"../src/assets/imagenes/huesoTela.jfif"}
+    {nombre: "Cama para Auto", precio: "$25000", stock:25, categoria: "auto",  detalles:"Cama Para Perros Huella Living Car Doble Talle 5 Para Autos", img:"../src/assets/imagenes/camaAutp.webp"},
+    {nombre: "Comedero", precio: "$10000", stock: 50, categoria: "casa", detalles:"Comedero para raza pequeña de aluminio",img:"../src/assets/imagenes/comedero.webp"},
+    {nombre: "Comedero come lento", precio: "$25000", stock: 5, categoria: "casa", detalles:"Comedero diseñado para aliviar la ansiedad a la hora de comer. De plástico en varios colores",img:"../src/assets/imagenes/comederoComelentoo.webp"},
+    {nombre: "Comedero automático", precio: "$15000", stock: 40, categoria: "casa", detalles:"Comedero con reposición automática",img:"../src/assets/imagenes/comederoAutomaticp.webp"},
+    {nombre: "Hueso de tela", precio: "$5000", stock:100,  categoria: "juguetes", detalles:"Jueguete de tela para tirar en varios colores",img:"../src/assets/imagenes/huesoTela.jfif"}
 ]
 
 const vincularProductos = async ()=>{
-    const batch = writeBatch(base)
-    const productosRef = collection(base, "productos")
+    const batch = writeBatch(db)
+    const productosRef = collection(db, "productos")
 
     productosDoggi.forEach((producto)=>{
         const crearDoc = doc(productosRef)
         batch.set(crearDoc, producto)
     })
 
-    try {
-        await batch.comit()
+   try {
+        await batch.commit()
         console.log("el producto se subio bien")
     }catch(error){
-        console.log(erroorrrr)
+        console.log("error")
     }
 }
 
-vincularProductos()
+vincularProductos()*/
