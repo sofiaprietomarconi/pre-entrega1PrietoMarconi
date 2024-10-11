@@ -10,7 +10,7 @@ const navBar = () => {
         <h1> <img width="48" height="48" src="https://img.icons8.com/color/48/year-of-dog.png" alt="year-of-dog"/> DOGGI SHOP</h1>
         </Link>
             <ul className='ulClass'>
-            <li className='li'>
+                <li className='li'>
                   <NavLink to="/">Home</NavLink>
                   </li>
                 <li className='li'>

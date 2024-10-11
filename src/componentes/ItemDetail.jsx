@@ -1,12 +1,36 @@
+import Contador from "./contador";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./ItemDetail.css"
+import { CarritoContext } from "../context/carritoContext";
+import { useContext } from "react";
 
-const ItemDetail = ({ id, nombre, precio, img }) => {
+
+const ItemDetail = ({ id, nombre, precio, img, stock, detalles}) => {
+
+  const {sumarAlCarrito}= useContext(CarritoContext)
+
+  const [actualizarCant, setActualizarCont] = useState(0)
+  const manejadorCantidad =(cantidad)=>{
+    setActualizarCont(cantidad)
+    console.log("Productos agregados" + cantidad )
+
+    const item = {id, nombre, precio}
+    sumarAlCarrito(item, cantidad)
+  }
+
     return (
-      <div>
+      <div className="detailContainer">
         <img src={img} alt={nombre} />
         <h2>{nombre}</h2>
-        <h2>{precio}</h2>
-        <h2>{id}</h2>
-        <p>detalles del producto</p>
+        <p>{precio}</p>
+        <p>{id}</p>
+        <p>{detalles}</p>
+
+        {
+          actualizarCant > 0 ? (<Link to="/Cart">Terminar compra </Link>) : (<Contador inicial={1} stock = {stock} agregarProductos={manejadorCantidad}/>)
+        }
+
       </div>
     );
   };

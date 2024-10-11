@@ -1,0 +1,19 @@
+.contenedor{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .product-list-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .product-list-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
