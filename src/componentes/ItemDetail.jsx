@@ -13,7 +13,6 @@ const ItemDetail = ({ id, nombre, precio, img, stock, detalles}) => {
   const [actualizarCant, setActualizarCont] = useState(0)
   const manejadorCantidad =(cantidad)=>{
     setActualizarCont(cantidad)
-    console.log("Productos agregados" + cantidad )
 
     const item = {id, nombre, precio}
     sumarAlCarrito(item, cantidad)

@@ -4,7 +4,7 @@ import {db} from "./services/config"
 import { collection, addDoc } from "firebase/firestore"
 import "./Checkout.css"
 
-const checkout = () => {
+const Checkout = () => {
 
 
     const [nombre, setNombre] = useState("")
@@ -104,4 +104,4 @@ const checkout = () => {
 }
 
 
-export default checkout
+export default Checkout
